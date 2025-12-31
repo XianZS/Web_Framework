@@ -1,17 +1,28 @@
-from flask import Flask, request
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-
-# GET请求获取数据
-
-
-@app.route("/get_data", methods=["GET"])
-def get_data_function():
-    data = request.args.get("data")
-    for cho in data:
-        print(cho)
-    return "True", 200
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:YangHaiTao3135@localhost/graduation'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 
-if __name__ == "__main__":
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
+
+
+@app.route('/')
+def index():
+    users = User.query.all()
+    return '<br>'.join([f'{user.username} ({user.email})' for user in users])
+
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()  # 创建数据库表
     app.run(debug=True)
