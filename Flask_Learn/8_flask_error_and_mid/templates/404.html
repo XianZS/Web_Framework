@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>404 - 页面走丢了</title>
+		<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+		body {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			overflow: hidden;
+		}
+
+		.container {
+			text-align: center;
+			z-index: 1;
+			animation: fadeIn 1.5s ease-in-out;
+		}
+
+		.error-code {
+			font-size: 12rem;
+			font-weight: bold;
+			background: linear-gradient(45deg, #fff, #ffd700);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+			margin-bottom: 2rem;
+			position: relative;
+		}
+
+		.error-code::after {
+			content: "404";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(45deg, #ffd700, #fff);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			opacity: 0;
+			animation: shimmer 3s infinite;
+		}
+
+		.error-message {
+			font-size: 1.8rem;
+			margin-bottom: 3rem;
+			opacity: 0.9;
+		}
+
+		.sub-message {
+			font-size: 1.2rem;
+			margin-bottom: 4rem;
+			opacity: 0.7;
+		}
+
+		.btn-home {
+			display: inline-block;
+			padding: 1rem 3rem;
+			background: rgba(255,255,255,0.2);
+			border: 2px solid #fff;
+			border-radius: 50px;
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.2rem;
+			font-weight: bold;
+			transition: all 0.3s ease;
+			backdrop-filter: blur(10px);
+		}
+
+		.btn-home:hover {
+			background: #fff;
+			color: #667eea;
+			transform: translateY(-3px);
+			box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+		}
+
+		.floating-elements {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: 0;
+		}
+
+		.floating-elements span {
+			position: absolute;
+			bottom: -50px;
+			width: 20px;
+			height: 20px;
+			background: rgba(255,255,255,0.1);
+			border-radius: 50%;
+			animation: float 8s infinite ease-in-out;
+		}
+
+		.floating-elements span:nth-child(1) { left: 10%; animation-delay: 0s; }
+		.floating-elements span:nth-child(2) { left: 20%; animation-delay: 1s; width: 30px; height: 30px; }
+		.floating-elements span:nth-child(3) { left: 30%; animation-delay: 2s; }
+		.floating-elements span:nth-child(4) { left: 40%; animation-delay: 3s; width: 40px; height: 40px; }
+		.floating-elements span:nth-child(5) { left: 50%; animation-delay: 4s; }
+		.floating-elements span:nth-child(6) { left: 60%; animation-delay: 5s; width: 30px; height: 30px; }
+		.floating-elements span:nth-child(7) { left: 70%; animation-delay: 6s; }
+		.floating-elements span:nth-child(8) { left: 80%; animation-delay: 7s; width: 50px; height: 50px; }
+		.floating-elements span:nth-child(9) { left: 90%; animation-delay: 8s; }
+
+		@keyframes fadeIn {
+			from { opacity: 0; transform: translateY(30px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
+		@keyframes shimmer {
+			0% { opacity: 0; transform: translateX(-100%); }
+			50% { opacity: 1; transform: translateX(0%); }
+			100% { opacity: 0; transform: translateX(100%); }
+		}
+
+		@keyframes float {
+			0% { bottom: -50px; transform: translateX(0); }
+			50% { transform: translateX(50px); }
+			100% { bottom: 100vh; transform: translateX(-50px); }
+		}
+
+		@media (max-width: 768px) {
+			.error-code { font-size: 8rem; }
+			.error-message { font-size: 1.5rem; }
+			.sub-message { font-size: 1rem; }
+			.btn-home { padding: 0.8rem 2rem; font-size: 1rem; }
+		}
+		</style>
+	</head>
+	<body>
+		<div class="floating-elements">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<div class="container">
+			<div class="error-code">404</div>
+			<div class="error-message">哎呀，页面走丢了！</div>
+			<div class="sub-message">你访问的页面不存在、已删除或地址有误</div>
+		</div>
+	</body>
+</html>
