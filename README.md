@@ -1,6 +1,6 @@
 # Python Web Frameworks Learning Repository
 
-![s1](https://img.shields.io/badge/python-3.8%252B-blue)![s2](https://img.shields.io/badge/license-MIT-green)![s3](https://img.shields.io/badge/status-active-success)
+![s1](https://img.shields.io/badge/python-3.8%252B-blue)   ![s2](https://img.shields.io/badge/license-MIT-green)   ![s3](https://img.shields.io/badge/status-active-success)
 
 ​	A comprehensive Python web frameworks learning repository designed to help developers systematically learn various Python web frameworks. Each framework includes independent example code, tutorials, and best practices.
 
