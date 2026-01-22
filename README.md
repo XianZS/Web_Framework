@@ -50,26 +50,43 @@ pip install -r requirements.txt
 
 ## 📁 Project Structure
 
-```
-Web_Framework/
-├── Flask_Learn/                 # Flask Framework Learning
-│   ├── examples/               # Example Code
-│   ├── tutorials/              # Tutorial Documentation
-│   ├── projects/               # Complete Projects
-│   └── README.md               # Flask-specific README
-├── Django_Learn/               # Django Framework Learning
-│   ├── projects/               # Django Projects
-│   ├── apps/                   # Django Applications
-│   └── README.md               # Django-specific README
-├── FastAPI_Learn/              # FastAPI Framework Learning
-│   ├── examples/               # Async Examples
-│   ├── projects/               # Complete API Projects
-│   └── README.md               # FastAPI-specific README
-├── requirements.txt            # Common Dependencies
-├── setup.py                    # Project Installation Configuration
-├── .gitignore                  # Git Ignore Files
-└── README.md                   # Main README File
-```
+### Root Directory
+- **README.md**: Main project documentation, including framework list, quick start guide, learning path, etc.
+- **LICENSE**: MIT license file
+- **flask.md**: Flask framework related documentation
+- **some.py**: Sample script file
+- **app.c**: C language sample file
+- **assets/**: Contains SVG icons and image resources used in the project
+
+### Flask_Learn Directory
+- **1_flask_use.py**: Basic Flask usage example, includes a simple Hello World application
+- **2_flask_route.py**: Flask routing example, demonstrates different types of route definitions and request methods
+- **3_flask_view_function.py**: Flask view function example, demonstrates request pre/post processing, status code return, etc.
+- **4_flask_template_make.py**: Flask template usage example
+- **5_flask_form_make.py**: Flask form handling example
+- **6_flask_database.py**: Flask database operation example
+- **7_flask_bp/**: Flask Blueprint example, includes modular routing and templates
+- **8_flask_error_and_mid/**: Flask error handling and middleware example
+- **9_flask_middleware.py**: Flask middleware usage example
+- **10_bushu/**: Flask deployment example, includes NGINX configuration and Waitress server configuration
+- **main.py**: Flask main application example file
+- **templates/**: Contains Flask template files
+
+### FastAPI_Learn Directory
+- **1_fastapi_simple.py**: Basic FastAPI usage example, includes a simple Hello World application
+- **2_FastAPI_r_s_arguments.py**: FastAPI path parameters and query parameters example
+- **3_fastapi_pydantic.py**: FastAPI data model (Pydantic) example
+- **4_fastapi_cookie.py**: FastAPI Cookie handling example
+- **5_fastapi_header.py**: FastAPI Header handling example
+- **6_form_data.py**: FastAPI form data handling example
+- **7_fastapi_file.py**: FastAPI file upload example
+- **8_fastapi_status_code.py**: FastAPI status code setting example
+- **9_fastapi_depend_about_*.py**: FastAPI dependency injection examples, including function dependencies, class dependencies, and child dependencies
+- **10_fastapi_oauth.py**: FastAPI OAuth2 authentication example
+- **10_fastapi_oauth_jwt.py**: FastAPI JWT authentication example
+- **11_fastapi_middleware.py**: FastAPI middleware example
+- **12_fastapi_sqlmodel.py**: FastAPI SQLModel database operation example
+
 
 ## 📖 Learning Path
 
@@ -113,6 +130,7 @@ Web_Framework/
 
 ### 1. Learn in Order
 Recommended learning order by difficulty:
+
 ```
 Flask → Django → FastAPI → Other Frameworks
 ```

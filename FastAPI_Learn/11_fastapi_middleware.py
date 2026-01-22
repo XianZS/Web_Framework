@@ -1,22 +1,35 @@
-from fastapi import FastAPI, Request
-
+import time
+from fastapi import FastAPI
+from fastapi import Request
 
 app = FastAPI()
 
 
 @app.middleware("http")
-async def add_process_time_header_1(request: Request, call_next):
-    print("=== 中间件1 ===")
-    response = await call_next(request)
-    print(request.method)
-    print(request.url)
-    print(request.cookies)
-    if request.client:
-        print(request.client.host)
-    print(request.state)
-    return response
+async def middleware_1_function(request: Request, call_next):
+    begin_time = time.time()
+    print("=== 第一个中间件 ===")
+    print(f"request type :{type(request)}")
+    print(f"请求路径:{request.url}")
+    print(f"请求方法:{request.method}")
+    print(f"请求头:{request.headers}")
+    res = await call_next(request)
+    spent_time = str(time.time() - begin_time)
+    res.headers["X-Spent-Time"] = spent_time
+    return res
 
 
-@app.get("/test")
-async def test_function():
+@app.middleware("http")
+async def middleware_2_function(request: Request, call_next):
+    print("=== 第二个中间件 ===")
+    res = await call_next(request)
+    return res
+
+
+@app.get("/me")
+async def me_function():
     return "test"
+
+
+if __name__ == "__main__":
+    pass
