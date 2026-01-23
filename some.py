@@ -12,12 +12,12 @@ def login():
 def index():
     number = 1
     print(number)
-    yyy = 100
+    yyy = 1
     print(yyy)
     for x in range(1, 100):
         number += x
         number += 123
-    return "iex"
+    return "index"
 
 
 if __name__ == "__main__":
